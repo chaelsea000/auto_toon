@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Images</title>
+</head>
+<body>
+    <h1>Generated Images</h1>
+    {% for image in image_data %}
+        <img src="{{ image.path }}" alt="Generated Image {{ image.id }}">
+        <a href="{{ url_for('download', image_id=image.id) }}">Download Image {{ image.id }}</a>
+        <br><br>
+    {% endfor %}
+    <a href="/">Generate Again</a>
+</body>
+</html>
